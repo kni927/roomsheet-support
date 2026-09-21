@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RoomSheet support and privacy information.">
+  <meta name="color-scheme" content="light dark">
+  <title>RoomSheet — Support & Privacy</title>
+  <style>
+    :root {
+      --max-width: 760px;
+      --border: color-mix(in srgb, CanvasText 16%, transparent);
+      --muted: color-mix(in srgb, CanvasText 68%, transparent);
+      --surface: color-mix(in srgb, CanvasText 5%, transparent);
+      --accent: #0a84ff;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue",
+        "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.65;
+      background: Canvas;
+      color: CanvasText;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.16em;
+    }
+
+    header, main, footer {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin-inline: auto;
+    }
+
+    header { padding: 64px 0 28px; }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 7vw, 3.5rem);
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+    }
+
+    .tagline {
+      margin: 14px 0 0;
+      max-width: 38rem;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      margin-top: 26px;
+      font-size: 0.95rem;
+    }
+
+    nav a { color: inherit; text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+
+    section {
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
+      scroll-margin-top: 20px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.45rem;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      margin: 22px 0 6px;
+      font-size: 1rem;
+    }
+
+    p { margin: 9px 0; }
+
+    .note {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .en {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .support-link {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 9px 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: inherit;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .support-link:hover { background: var(--surface); }
+
+    footer {
+      padding: 24px 0 48px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>RoomSheet</h1>
+    <p class="tagline">
+      LiDARとApple RoomPlanを利用して室内を測定し、平面図、3Dモデル、
+      編集可能なSH3Dプロジェクトとして保存・書き出すためのiPhoneアプリです。
+    </p>
+    <p class="tagline en" lang="en">
+      RoomSheet uses LiDAR and Apple RoomPlan to capture rooms and export
+      floor plans, 3D models, and editable SH3D projects.
+    </p>
+
+    <nav aria-label="Page navigation">
+      <a href="#about">About</a>
+      <a href="#requirements">Requirements</a>
+      <a href="#support">Support</a>
+      <a href="#privacy">Privacy</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        RoomSheetは、RoomPlanで取得した室内データを端末内に保存し、
+        2D平面図、3Dモデル、SH3Dなどの形式で確認・書き出せます。
+        RoomSheetが書き出したパッケージは、別のRoomSheetへ読み込むこともできます。
+      </p>
+      <p class="en" lang="en">
+        RoomSheet stores RoomPlan captures on your device and lets you view
+        or export them as 2D floor plans, 3D models, SH3D projects, and other
+        RoomSheet package files. Packages exported by RoomSheet can also be
+        imported back into RoomSheet.
+      </p>
+    </section>
+
+    <section id="requirements">
+      <h2>Requirements</h2>
+      <p>
+        新しい室内スキャンには、RoomPlanに対応したLiDAR搭載iPhoneまたはiPadが必要です。
+        LiDAR非搭載端末でも、既存のRoomSheetパッケージの読み込み、閲覧、管理、書き出しは利用できます。
+      </p>
+      <p class="en" lang="en">
+        Creating a new room scan requires a LiDAR-equipped iPhone or iPad
+        supported by RoomPlan. Devices without LiDAR can still import, view,
+        manage, and export existing RoomSheet packages.
+      </p>
+
+      <div class="note">
+        <strong>Location / 位置情報</strong>
+        <p>
+          スキャン時に、市町村レベルのおおまかな位置情報と方位を
+          メタデータとして記録することがあります。位置情報の許可は任意で、
+          拒否しても室内スキャン自体は利用できます。
+        </p>
+        <p class="en" lang="en">
+          RoomSheet may record approximate municipality-level location and
+          orientation as scan metadata. Location permission is optional and
+          is not required to create a room scan.
+        </p>
+      </div>
+    </section>
+
+    <section id="support">
+      <h2>Support</h2>
+      <p>不具合の報告、質問、機能要望はGitHub Issuesから送信できます。</p>
+      <p class="en" lang="en">
+        For bug reports, questions, or feature requests, please use GitHub Issues.
+      </p>
+      <a class="support-link"
+         href="https://github.com/kni927/roomsheet-support/issues"
+         rel="noopener">
+        Open GitHub Issues
+      </a>
+    </section>
+
+    <section id="privacy">
+      <h2>Privacy</h2>
+
+      <h3>データの保存</h3>
+      <p>
+        RoomSheetはユーザーアカウントや独自のクラウドサービスを運営していません。
+        スキャン、参考写真、生成ファイルは端末内、またはユーザーが明示的に選択した
+        Files等の保存先に保存されます。RoomSheetがスキャンデータを独自サーバーへ
+        自動送信することはありません。
+      </p>
+
+      <h3>位置情報と方位</h3>
+      <p>
+        許可された場合、スキャンに市町村レベルのおおまかな位置情報と方位を
+        メタデータとして保存することがあります。位置情報の利用は任意です。
+      </p>
+
+      <h3>参考写真</h3>
+      <p>
+        RoomSheet内で撮影した参考写真はRoomSheetのスキャンデータとして保存され、
+        Photosライブラリへ自動保存されません。
+      </p>
+
+      <div class="en" lang="en">
+        <h3>Data storage</h3>
+        <p>
+          RoomSheet does not operate a user-account system or its own cloud
+          service. Scans, reference photos, and generated files are stored on
+          the device or in locations explicitly chosen by the user through
+          system file interfaces. RoomSheet does not automatically upload scan
+          data to a RoomSheet-operated server.
+        </p>
+
+        <h3>Location and orientation</h3>
+        <p>
+          If permission is granted, RoomSheet may store approximate
+          municipality-level location and orientation as scan metadata.
+          Location access is optional.
+        </p>
+
+        <h3>Reference photos</h3>
+        <p>
+          Reference photos captured in RoomSheet are stored with the RoomSheet
+          scan and are not automatically saved to the Photos library.
+        </p>
+      </div>
+
+      <p class="note">
+        Privacyに関する質問も
+        <a href="https://github.com/kni927/roomsheet-support/issues">GitHub Issues</a>
+        から送信できます。
+        <span class="en" lang="en">
+          Privacy questions can also be submitted through GitHub Issues.
+        </span>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>RoomSheet · Support &amp; Privacy</p>
+  </footer>
+</body>
+</html>
